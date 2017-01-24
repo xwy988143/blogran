@@ -21,7 +21,6 @@ class BackendController extends Controller
         $data = $request->all();
         $where = ['username'=>$data['username'],'password'=>$data['password']];
         $result = DB::table('admin')->where($where)->get()->toArray();
-        $bool = Empty($result);
         if(!Empty($result))
         {
             Session::put('admin',$data['username']);
@@ -33,6 +32,6 @@ class BackendController extends Controller
 
     public function dashboard()
     {
-        return 'fsdf';
+        return view('backend.dashboard');
     }
 }
