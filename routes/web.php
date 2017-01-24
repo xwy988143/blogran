@@ -22,5 +22,6 @@ Auth::routes();
 Route::group(['prefix'=>'backend'],function(){
     Route::any('/','Backend\BackendController@index');
     Route::post('login','Backend\BackendController@login');
-    Route::any('dashboard','Backend\BackendController@dashboard');
+    Route::any('/dashboard','Backend\BackendController@dashboard');
+    Route::any('/panel','Backend\BackendController@panel');
 });

@@ -88,7 +88,7 @@
                         <ul class="dropdown-menu">
                             <!-- User image -->
                             <li class="user-header">
-                                
+
                             </li>
                             <!-- Menu Body -->
                             <li class="user-body">
@@ -116,10 +116,6 @@
                             </li>
                         </ul>
                     </li>
-                    <!-- Control Sidebar Toggle Button -->
-                    <li>
-                        <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-                    </li>
                 </ul>
             </div>
         </nav>
@@ -134,10 +130,6 @@
         <section class="content">
             <!-- Small boxes (Stat box) -->
             @yield('content')
-            <!-- /.row -->
-            <!-- Main row -->
-            <!-- /.row (main row) -->
-
         </section>
         <!-- /.content -->
     </div>

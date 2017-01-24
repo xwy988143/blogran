@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Session;
 class BackendController extends Controller
 {
     //
+
     public function index()
     {
         return view('backend.login');
@@ -18,6 +19,7 @@ class BackendController extends Controller
     public function login(Request $request)
     {
         //
+
         $data = $request->all();
         $where = ['username'=>$data['username'],'password'=>$data['password']];
         $result = DB::table('admin')->where($where)->get()->toArray();
@@ -33,5 +35,10 @@ class BackendController extends Controller
     public function dashboard()
     {
         return view('backend.dashboard');
+    }
+
+    public function panel()
+    {
+        return view('backend.panel');
     }
 }
