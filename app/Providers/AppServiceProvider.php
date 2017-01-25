@@ -15,10 +15,17 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-
-        $panel = DB::table('panel')->get()->toArray();
-
-        view()->share('menu',$panel);
+        $panel = DB::table('panel')->get()->toarray();
+        $res=json_decode(json_encode($panel),true);
+        foreach ($res as $k => $v) {
+            if($v['pid'] == 0) $data[] = $v;
+        }
+        foreach ($res as $k => $v) {
+            foreach ($data as $key => $value) {
+                if($value['id'] == $v['pid']) $data[$key]['child'][] = $v;
+            }
+        }
+        view()->share('menu',$data);
     }
 
     /**

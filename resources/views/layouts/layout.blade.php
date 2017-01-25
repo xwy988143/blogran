@@ -130,6 +130,7 @@
         <section class="content">
             <!-- Small boxes (Stat box) -->
             @yield('content')
+
         </section>
         <!-- /.content -->
     </div>
