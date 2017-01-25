@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+
 
 //Route::get('/home', 'HomeController@index');
 //Route::get('backend','Backend\BackendController@index');
@@ -24,4 +24,5 @@ Route::group(['prefix'=>'backend'],function(){
     Route::post('login','Backend\BackendController@login');
     Route::any('/dashboard','Backend\BackendController@dashboard');
     Route::any('/panel','Backend\BackendController@panel');
+    Route::resource('/system','Backend\SystemController');
 });

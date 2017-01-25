@@ -1,30 +1,30 @@
 @extends('layouts.layout')
 @section('link')
-    {{--<script type="text/JavaScript" src="{{asset('plugins/ckeditor/ckeditor.js')}}"></script>--}}
+    <script type="text/JavaScript" src="{{asset('plugins/ckeditor/ckeditor.js')}}"></script>
 @stop
 @section('content')
     <div class="box box-info">
         <div class="box-header with-border">
-            <h3 class="box-title">创建栏目</h3>
+            <h3 class="box-title">创建文章分类</h3>
         </div>
         <!-- /.box-header -->
         <!-- form start -->
         <form class="form-horizontal">
             <div class="box-body">
                 <div class="form-group">
-                    <label  class="col-sm-2 control-label">父栏目</label>
+                    <label for="inputEmail3" class="col-sm-2 control-label">文章类名</label>
 
-                    <div class="col-sm-6">
-                        <select class="form-control">
-                            <option value=0>作为一级栏目</option>
-                        </select>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputEmail3" placeholder="名称">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label  class="col-sm-2 control-label">栏目标题</label>
+                    <label for="inputPassword3" class="col-sm-2 control-label">文章标题</label>
 
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control" name="title" placeholder="名称">
+                    <div class="col-sm-10">
+                        <textarea id="editor1" name="editor1" rows="10" cols="130">
+                        </textarea>
+                        <script type="text/javascript">CKEDITOR.replace('editor1');</script>
                     </div>
                 </div>
                 <div class="form-group">
