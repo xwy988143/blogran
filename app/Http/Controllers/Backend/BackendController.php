@@ -39,6 +39,7 @@ class BackendController extends Controller
 
     public function panel()
     {
-        return view('backend.panel');
+        $result = DB::table('panel')->where('pid','=',0)->get()->toarray();
+        return view('backend.panel',['panel'=>$result]);
     }
 }
