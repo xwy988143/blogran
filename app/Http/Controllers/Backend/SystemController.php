@@ -21,6 +21,13 @@ class SystemController extends Controller
         if($bool)
         {
           return redirect('backend/dashboard');
+        }else {
+            abort('503');
         }
+    }
+    public function index()
+    {
+        $data = DB::table('panel')->get()->toarray();
+        return view('backend.index',['panel1'=>$data]);
     }
 }
