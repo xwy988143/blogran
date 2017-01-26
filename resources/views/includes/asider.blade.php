@@ -12,7 +12,7 @@
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                 </a>
-                @if($m['child']!=null)
+                @if(!empty($m['child']))
                     @foreach($m['child'] as $c)
                 <ul class="treeview-menu">
                     <li class=""><a href="{{url($c['link'])}}"><i class="fa fa-circle-o"></i> {{$c['name']}}</a></li>

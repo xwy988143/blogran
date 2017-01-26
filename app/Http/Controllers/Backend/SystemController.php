@@ -18,7 +18,9 @@ class SystemController extends Controller
         $insert['link']=$data['link'];
         $insert['type']=0;
         $bool = DB::table('panel')->insert($insert);
-        var_dump($bool);
-        exit;
+        if($bool)
+        {
+          return redirect('backend/dashboard');
+        }
     }
 }
