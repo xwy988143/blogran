@@ -10,7 +10,7 @@
         <tr>
         <td class="success">{{$item->name}}</td>
         <td class="warning">{{$item->link}}</td>
-        <td class="active">删除|修改</td>
+        <td class="active"><a href="{{route('system.edit',$item->id)}}" >修改</a></td>
         </tr>
     @endforeach
 </table>

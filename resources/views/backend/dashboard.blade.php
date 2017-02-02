@@ -5,9 +5,9 @@
             <!-- small box -->
             <div class="small-box bg-aqua">
                 <div class="inner">
-                    <h3>150</h3>
+                    <h3>0</h3>
 
-                    <p>New Orders</p>
+                    <p>文章数</p>
                 </div>
                 <div class="icon">
                     <i class="ion ion-bag"></i>
@@ -35,9 +35,9 @@
             <!-- small box -->
             <div class="small-box bg-yellow">
                 <div class="inner">
-                    <h3>44</h3>
+                    <h3>0</h3>
 
-                    <p>User Registrations</p>
+                    <p>注册用户</p>
                 </div>
                 <div class="icon">
                     <i class="ion ion-person-add"></i>

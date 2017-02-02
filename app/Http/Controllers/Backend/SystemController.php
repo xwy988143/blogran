@@ -30,4 +30,26 @@ class SystemController extends Controller
         $data = DB::table('panel')->get()->toarray();
         return view('backend.index',['panel1'=>$data]);
     }
+
+    public function edit($id)
+    {
+            $data = DB::table('panel')->where('id', '=', $id)->get()->toArray();
+            return view('backend.editpanel', ['data' => $data]);
+    }
+
+    public function modify(CreatePanelRequest $request)
+    {
+        $data = $request->input('panel');
+        $update['name'] = $data['name'];
+        $update['link'] = $data['link'];
+        $where['id'] = $data['id'];
+        $bool = DB::table('panel')->where($where)->update($update);
+        if($bool)
+        {
+            return redirect('backend/dashboard');
+        }else{
+            abort('503');
+        }
+
+    }
 }

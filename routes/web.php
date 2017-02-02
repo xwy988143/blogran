@@ -25,4 +25,5 @@ Route::group(['prefix'=>'backend'],function(){
     Route::any('/dashboard','Backend\BackendController@dashboard');
     Route::any('/panel','Backend\BackendController@panel');
     Route::resource('/system','Backend\SystemController');
+    Route::post('/system/modify',['as'=>'system.modify','uses'=>'Backend\SystemController@modify']);
 });
