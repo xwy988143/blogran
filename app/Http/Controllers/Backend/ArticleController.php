@@ -20,5 +20,45 @@ class ArticleController extends Controller
     {
         $data = $request->input('article');
         $bool = Article::add($data);
+        if($bool)
+        {
+            return redirect('backend/article');
+        }
     }
+
+    public function index()
+    {
+        $data = Article::paginate(10);
+        return view('backend.article.index',['data'=>$data]);
+    }
+
+    public function edit($id)
+    {
+        $data = Article::find($id);
+        return view('backend.article.edit',['data'=>$data]);
+    }
+
+    public function update(createArticle $request,$id)
+    {
+        $data = $request->input('article');
+        $bool = Article::modify($data,$id);
+        if($bool)
+        {
+            return redirect('backend/article');
+        }else
+        {
+            abort('503');
+        }
+    }
+
+    public function delete($id)
+    {
+        $article = Article::find($id);
+        if($article->delete()){
+            return redirect('backend/article');
+        }else{
+            return 'failed';
+        }
+    }
+
 }

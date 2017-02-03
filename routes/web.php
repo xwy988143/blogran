@@ -29,5 +29,6 @@ Route::group(['prefix'=>'backend'],function(){
     Route::post('/system/modify',['as'=>'system.modify','uses'=>'Backend\SystemController@modify']);
 
     //文章控制器
+    Route::get('/article/{id}/delete',['as'=>'article.delete','uses'=>'Backend\ArticleController@delete']);
     Route::resource('/article','Backend\ArticleController');
 });

@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Article extends Model
 {
@@ -40,6 +41,16 @@ class Article extends Model
             'create_at'=>time(),
             'updated_at'=>0,
         ]);
+    }
+
+    public static function modify($data,$id)
+    {
+        $update['title']=$data['title'];
+        $update['keyword']=$data['keyword'];
+        $update['class']=$data['class'];
+        $update['content']=$data['content'];
+        $update['updated_at']=time();
+        return DB::table('articles')->where('id',$id)->update($update);
     }
 
 }
