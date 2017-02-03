@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreatePanelRequest extends FormRequest
+class createArticle extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,11 @@ class CreatePanelRequest extends FormRequest
     public function rules()
     {
         return [
-            'panel.name'=>'required',
+            //
+            'article.title'=>'required|min:3|max:30',
+            'article.class'=>'required',
+            'article.content'=>'required|min:1',
+            'article.keyword'=>'required'
         ];
     }
 }

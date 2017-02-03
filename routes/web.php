@@ -24,6 +24,10 @@ Route::group(['prefix'=>'backend'],function(){
     Route::post('login','Backend\BackendController@login');
     Route::any('/dashboard','Backend\BackendController@dashboard');
     Route::any('/panel','Backend\BackendController@panel');
+    Route::get('/system/delete/{id}',['as'=>'system.delete','uses'=>'Backend\SystemController@delete']);
     Route::resource('/system','Backend\SystemController');
     Route::post('/system/modify',['as'=>'system.modify','uses'=>'Backend\SystemController@modify']);
+
+    //文章控制器
+    Route::resource('/article','Backend\ArticleController');
 });

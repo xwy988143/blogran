@@ -16,7 +16,7 @@
                 <div class="form-group">
                     <label  class="col-sm-2 control-label">父栏目</label>
                     <div class="col-sm-6">
-                        <select name="panel[pid]" class="form-control">
+                        <select name="panel[pid]" class="form-control" autofocus>
                             <option value=0>作为一级栏目</option>
                             @foreach($panel as $m)
                                 <option  value={{$m->id}}>{{$m->name}}</option>
@@ -35,7 +35,7 @@
                     <label  class="col-sm-2 control-label">路由地址</label>
 
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" name="panel[link]" placeholder="路由地址">
+                        <input type="text" class="form-control" name="panel[link]" placeholder="若为一级标题则留空">
                     </div>
                 </div>
                 <div class="form-group">
