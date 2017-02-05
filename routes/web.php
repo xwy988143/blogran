@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 
 
-//Route::get('/home', 'HomeController@index');
+Route::get('/', 'HomeController@index');
 //Route::get('backend','Backend\BackendController@index');
 Route::group(['prefix'=>'backend'],function(){
     Route::any('/','Backend\BackendController@index');

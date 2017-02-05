@@ -28,7 +28,7 @@ class ArticleController extends Controller
 
     public function index()
     {
-        $data = Article::paginate(10);
+        $data = Article::orderBy('id','desc')->paginate(10);
         return view('backend.article.index',['data'=>$data]);
     }
 

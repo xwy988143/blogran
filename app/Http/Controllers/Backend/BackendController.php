@@ -34,7 +34,8 @@ class BackendController extends Controller
 
     public function dashboard()
     {
-        return view('backend.dashboard');
+        $num = DB::table('articles')->count();
+        return view('backend.dashboard',['num'=>$num]);
     }
 
     public function panel()
